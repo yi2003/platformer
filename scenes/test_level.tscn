@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3]
+[gd_scene load_steps=8 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
 [ext_resource type="Texture2D" path="res://assets/images/Background/Blue.png" id="2"]
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/snail.tscn" id="4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(1200, 40)
@@ -59,3 +60,6 @@ scale = Vector2(12.5, 1.25)
 
 [node name="Player" parent="." instance=ExtResource("1")]
 position = Vector2(-200, 520)
+
+[node name="Snail" parent="." instance=ExtResource("4")]
+position = Vector2(100, 550)
