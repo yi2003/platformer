@@ -6,20 +6,20 @@
 [ext_resource type="SpriteFrames" uid="uid://cmpftbx0m5ufj" path="res://assets/player_sprite_frames.tres" id="4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
-size = Vector2(86, 101)
+size = Vector2(38, 47)
 
 [node name="Player" type="CharacterBody2D" unique_id=574882601]
 script = ExtResource("1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=675251285]
-scale = Vector2(4, 4)
+scale = Vector2(2, 2)
 sprite_frames = ExtResource("4")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.14399607
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=534109451]
-position = Vector2(3, 10.5)
+position = Vector2(1, 6.5)
 shape = SubResource("RectangleShape2D_1")
 
 [node name="CoyoteTimer" type="Timer" parent="." unique_id=995063630]
