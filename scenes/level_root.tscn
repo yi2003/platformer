@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bbxqwxg2leyoc" path="res://assets/images/Tilemap/Terrain (16x16).png" id="1_ypoqj"]
 [ext_resource type="PackedScene" uid="uid://dc7mwfl6mev0b" path="res://scenes/player.tscn" id="2_w3gk0"]
 [ext_resource type="PackedScene" uid="uid://dffwsp72m3yup" path="res://scenes/snail.tscn" id="4_1vg6f"]
+[ext_resource type="PackedScene" uid="uid://bnclmjo6i25py" path="res://scenes/apple.tscn" id="5_ssdv0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1vg6f"]
 texture = ExtResource("1_ypoqj")
@@ -203,3 +204,15 @@ position = Vector2(208, 560)
 
 [node name="Snail2" parent="." unique_id=189829630 instance=ExtResource("4_1vg6f")]
 position = Vector2(822, 560)
+
+[node name="Apple" parent="." unique_id=1622002709 instance=ExtResource("5_ssdv0")]
+position = Vector2(272, 233)
+
+[node name="Apple2" parent="." unique_id=1972730195 instance=ExtResource("5_ssdv0")]
+position = Vector2(499, 286)
+
+[node name="Apple3" parent="." unique_id=13594628 instance=ExtResource("5_ssdv0")]
+position = Vector2(1058, 126)
+
+[node name="Apple4" parent="." unique_id=2134695274 instance=ExtResource("5_ssdv0")]
+position = Vector2(289, 532)

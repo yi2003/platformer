@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3]
+[gd_scene load_steps=9 format=3]
 
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
 [ext_resource type="Texture2D" path="res://assets/images/Background/Blue.png" id="2"]
 [ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="3"]
 [ext_resource type="PackedScene" path="res://scenes/snail.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/apple.tscn" id="5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(1200, 40)
@@ -63,3 +64,12 @@ position = Vector2(-200, 520)
 
 [node name="Snail" parent="." instance=ExtResource("4")]
 position = Vector2(100, 550)
+
+[node name="Apple" parent="." instance=ExtResource("5")]
+position = Vector2(-50, 540)
+
+[node name="Apple2" parent="." instance=ExtResource("5")]
+position = Vector2(150, 360)
+
+[node name="Apple3" parent="." instance=ExtResource("5")]
+position = Vector2(0, 540)

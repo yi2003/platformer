@@ -61,6 +61,7 @@ func _physics_process(delta: float) -> void:
 		_hit_timer += delta
 		if _hit_timer >= HIT_DURATION:
 			player_died.emit()
+			sprite.hide()
 			set_physics_process(false)
 		move_and_slide()
 		return
