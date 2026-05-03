@@ -11,6 +11,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	set_deferred("monitoring", false)
+	GameManager.add_apple()
 	$AnimatedSprite2D.play(&"collected")
 	$CollectSfx.play()
 	await $AnimatedSprite2D.animation_finished

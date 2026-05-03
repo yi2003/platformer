@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="platformer"
-run/main_scene="uid://5hv4lh4qwul7"
+run/main_scene="uid://8y70cy6ugbj3"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://scripts/game_manager.gd"
 
 [display]
 

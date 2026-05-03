@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene load_steps=12 format=3]
 
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1"]
-[ext_resource type="Texture2D" path="res://assets/images/Background/Blue.png" id="2"]
-[ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="3"]
-[ext_resource type="PackedScene" path="res://scenes/snail.tscn" id="4"]
-[ext_resource type="PackedScene" path="res://scenes/apple.tscn" id="5"]
+[ext_resource type="Script" path="res://scripts/test_level.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2"]
+[ext_resource type="Texture2D" path="res://assets/images/Background/Blue.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/images/Tilemap/Terrain (16x16).png" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/snail.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/apple.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_floor"]
 size = Vector2(1200, 40)
@@ -16,9 +19,10 @@ size = Vector2(40, 500)
 size = Vector2(200, 20)
 
 [node name="TestLevel" type="Node2D"]
+script = ExtResource("1")
 
 [node name="Background" type="Sprite2D" parent="."]
-texture = ExtResource("2")
+texture = ExtResource("3")
 centered = false
 scale = Vector2(12, 8)
 z_index = -10
@@ -30,7 +34,7 @@ position = Vector2(0, 580)
 shape = SubResource("RectangleShape2D_floor")
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
-texture = ExtResource("3")
+texture = ExtResource("4")
 centered = false
 position = Vector2(-600, -20)
 scale = Vector2(75, 2.5)
@@ -42,7 +46,7 @@ position = Vector2(-380, 340)
 shape = SubResource("RectangleShape2D_wall")
 
 [node name="Sprite2D" type="Sprite2D" parent="LeftWall"]
-texture = ExtResource("3")
+texture = ExtResource("4")
 centered = false
 position = Vector2(-20, -250)
 scale = Vector2(2.5, 31.25)
@@ -54,22 +58,27 @@ position = Vector2(100, 400)
 shape = SubResource("RectangleShape2D_platform")
 
 [node name="Sprite2D" type="Sprite2D" parent="Platform"]
-texture = ExtResource("3")
+texture = ExtResource("4")
 centered = false
 position = Vector2(-100, -10)
 scale = Vector2(12.5, 1.25)
 
-[node name="Player" parent="." instance=ExtResource("1")]
+[node name="Player" parent="." instance=ExtResource("2")]
 position = Vector2(-200, 520)
 
-[node name="Snail" parent="." instance=ExtResource("4")]
+[node name="Snail" parent="." instance=ExtResource("5")]
 position = Vector2(100, 550)
 
-[node name="Apple" parent="." instance=ExtResource("5")]
+[node name="Checkpoint" parent="." instance=ExtResource("8")]
+position = Vector2(-250, 540)
+
+[node name="Apple" parent="." instance=ExtResource("6")]
 position = Vector2(-50, 540)
 
-[node name="Apple2" parent="." instance=ExtResource("5")]
+[node name="Apple2" parent="." instance=ExtResource("6")]
 position = Vector2(150, 360)
 
-[node name="Apple3" parent="." instance=ExtResource("5")]
+[node name="Apple3" parent="." instance=ExtResource("6")]
 position = Vector2(0, 540)
+
+[node name="HUD" parent="." instance=ExtResource("7")]

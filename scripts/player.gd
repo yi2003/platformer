@@ -95,6 +95,7 @@ func respawn(spawn_position: Vector2) -> void:
 	facing_direction = 1
 	is_wall_jump_locked = false
 	sprite.play(&"idle")
+	sprite.show()
 	sprite.scale.x = abs(sprite.scale.x)
 	collision_layer = 1
 	collision_mask = 1

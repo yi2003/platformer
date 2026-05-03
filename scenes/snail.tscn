@@ -44,3 +44,15 @@ collision_mask = 1
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BodyArea"]
 position = Vector2(0, 10)
 shape = SubResource("RectangleShape2D_hit")
+
+[node name="EdgeDetectLeft" type="RayCast2D" parent="."]
+position = Vector2(-25, 15)
+target_position = Vector2(0, 15)
+enabled = true
+collision_mask = 1
+
+[node name="EdgeDetectRight" type="RayCast2D" parent="."]
+position = Vector2(25, 15)
+target_position = Vector2(0, 15)
+enabled = true
+collision_mask = 1

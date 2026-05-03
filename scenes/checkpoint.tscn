@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://d23vm7na3a2o"]
+
+[ext_resource type="Script" uid="uid://bh74jgol38xlr" path="res://scripts/checkpoint.gd" id="1"]
+[ext_resource type="SpriteFrames" path="res://assets/checkpoint_sprite_frames.tres" id="2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1"]
+size = Vector2(27, 45)
+
+[node name="Checkpoint" type="Area2D" unique_id=1419019559]
+collision_layer = 4
+script = ExtResource("1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1056726478]
+position = Vector2(3, -11)
+sprite_frames = ExtResource("2")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=544426968]
+position = Vector2(6, -1)
+shape = SubResource("RectangleShape2D_1")

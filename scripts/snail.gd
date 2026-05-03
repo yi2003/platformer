@@ -18,6 +18,8 @@ var _flip_cooldown: float = 0.0
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var stomp_area: Area2D = $StompArea
 @onready var body_area: Area2D = $BodyArea
+@onready var edge_left: RayCast2D = $EdgeDetectLeft
+@onready var edge_right: RayCast2D = $EdgeDetectRight
 
 
 func _ready() -> void:
@@ -39,6 +41,11 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	_flip_cooldown = maxf(0.0, _flip_cooldown - delta)
+
+	if state == State.PATROL and _flip_cooldown <= 0.0:
+		var edge := edge_left if direction == -1 else edge_right
+		if not edge.is_colliding():
+			_flip_direction()
 
 	if is_on_wall():
 		velocity.y = maxf(velocity.y, 0.0)
@@ -94,7 +101,7 @@ func _bounce_shell() -> void:
 
 func _on_stomp_area_body_entered(body: Node2D) -> void:
 	if body is Player and body.velocity.y > 0.0:
-		body.velocity.y = -200.0  # bounce player up
+		body.velocity.y = -200.0
 		die()
 
 
@@ -102,7 +109,6 @@ func _on_body_area_body_entered(body: Node2D) -> void:
 	if body is Player and state == State.PATROL:
 		body.die()
 	elif body is Player and state == State.SHELL:
-		# Kick shell away from player
 		state = State.SHELL
 		direction = 1 if body.global_position.x < global_position.x else -1
 		velocity.x = direction * SHELL_SPEED
