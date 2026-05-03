@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" path="res://scenes/hud.tscn" id="6_cseeo"]
 [ext_resource type="PackedScene" uid="uid://d23vm7na3a2o" path="res://scenes/checkpoint.tscn" id="7_arxld"]
 [ext_resource type="Script" uid="uid://cq4d70pttaovt" path="res://scripts/level_base.gd" id="8_level"]
+[ext_resource type="Script" path="res://scripts/exit.gd" id="9_exit"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_advu8"]
 load_path = "res://.godot/imported/Green.png-548cbf01b73fb5e5bf40d1a892de2247.ctex"
@@ -244,6 +245,8 @@ position = Vector2(1102, 187)
 
 [node name="Exit" type="Area2D" parent="." unique_id=615617036]
 position = Vector2(1139, 186)
+script = ExtResource("9_exit")
+next_scene = "res://scenes/level_2.tscn"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=747112023]
@@ -275,6 +278,8 @@ position = Vector2(1145, 1339)
 
 [node name="Exit2" type="Area2D" parent="." unique_id=1522559950]
 position = Vector2(1161, 1352)
+script = ExtResource("9_exit")
+next_scene = "res://scenes/level_2.tscn"
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit2" unique_id=685295700]
